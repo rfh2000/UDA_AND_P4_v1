@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/jokebackend" />
             <option value="$PROJECT_DIR$/libandroidjokedisplay" />
             <option value="$PROJECT_DIR$/libjavajoke" />
             <option value="$PROJECT_DIR$/lidandroidjokedisplay" />

@@ -1,1 +1,1 @@
-include ':app', ':libjavajoke', ':lidandroidjokedisplay', ':libandroidjokedisplay'
+include ':app', ':libjavajoke', ':lidandroidjokedisplay', ':libandroidjokedisplay', ':jokebackend'

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UDA_AND_P4_v1.iml" filepath="$PROJECT_DIR$/UDA_AND_P4_v1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jokebackend/jokebackend.iml" filepath="$PROJECT_DIR$/jokebackend/jokebackend.iml" />
       <module fileurl="file://$PROJECT_DIR$/libandroidjokedisplay/libandroidjokedisplay.iml" filepath="$PROJECT_DIR$/libandroidjokedisplay/libandroidjokedisplay.iml" />
       <module fileurl="file://$PROJECT_DIR$/libjavajoke/libjavajoke.iml" filepath="$PROJECT_DIR$/libjavajoke/libjavajoke.iml" />
       <module fileurl="file://$PROJECT_DIR$/lidandroidjokedisplay/lidandroidjokedisplay.iml" filepath="$PROJECT_DIR$/lidandroidjokedisplay/lidandroidjokedisplay.iml" />

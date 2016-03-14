@@ -23,11 +23,12 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.android.support:appcompat-v7:23.1.1'
     // Added for AdMob
-    compile 'com.google.android.gms:play-services:7.3.0'
     // Added for Java joke library
     compile project(':libjavajoke')
     // Added for Android display joke activity
     compile project(':libandroidjokedisplay')
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.google.android.gms:play-services:8.4.0'
+    compile project(path: ':jokebackend', configuration: 'android-endpoints')
 }

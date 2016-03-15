@@ -6,11 +6,16 @@
 
 package com.udacity.gradle.builditbigger.backend;
 
+import com.example.JokeProvider;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 
 import javax.inject.Named;
+
+import sun.rmi.runtime.Log;
+
+import static sun.rmi.runtime.Log.*;
 
 /** An endpoint class we are exposing */
 @Api(
@@ -24,12 +29,22 @@ import javax.inject.Named;
 )
 public class MyEndpoint {
 
+    private static final String LOG_TAG = "TAG_________TAG";
+
     /** A simple endpoint method that takes a name and says Hi back */
     @ApiMethod(name = "sayHi")
     public MyBean sayHi(@Named("name") String name) {
         MyBean response = new MyBean();
         response.setData("Hi, " + name);
+        return response;
+    }
 
+    /** A simple endpoint method that gets a joke from a java library */
+    @ApiMethod(name = "getJoke")
+    public MyBean getJoke() {
+        MyBean response = new MyBean();
+        //(LOG_TAG, "The joke is " + new JokeProvider().getJoke());
+        response.setData(new JokeProvider().getJoke());
         return response;
     }
 

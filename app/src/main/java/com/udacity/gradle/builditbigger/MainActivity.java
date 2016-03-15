@@ -25,7 +25,10 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Ritchie"));
+        //new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Ritchie"));
+        //new JokeEndpointsAsyncTask().execute();
+        //Log.v(LOG_TAG, "Executing JokeAsyncTask");
+        //new JokeEndpointsAsyncTask().execute(this);
 
 //        WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
 //        String ipAddress = Formatter.formatIpAddress(wifiManager.getConnectionInfo().getIpAddress());
@@ -65,11 +68,12 @@ public class MainActivity extends ActionBarActivity {
 //    }
 
     public void launchAndroidLibraryActivity(View view){
-        JokeProvider jokeProvider = new JokeProvider();
-        String jokeString = jokeProvider.getJoke();
-        Intent intent = new Intent(this, JokeActivity.class);
-        intent.putExtra("JOKE", jokeString);
-        startActivity(intent);
+//        JokeProvider jokeProvider = new JokeProvider();
+//        String jokeString = jokeProvider.getJoke();
+//        Intent intent = new Intent(this, JokeActivity.class);
+//        intent.putExtra("JOKE", jokeString);
+//        startActivity(intent);
+        new JokeEndpointsAsyncTask().execute(this);
     }
 
 }

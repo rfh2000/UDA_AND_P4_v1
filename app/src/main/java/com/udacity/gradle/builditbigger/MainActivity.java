@@ -1,8 +1,13 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.format.Formatter;
+import android.util.Log;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,10 +18,20 @@ import com.example.android.libandroidjokedisplay.JokeActivity;
 
 public class MainActivity extends ActionBarActivity {
 
+    private static final String LOG_TAG = "MainActivity: ";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Ritchie"));
+
+//        WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
+//        String ipAddress = Formatter.formatIpAddress(wifiManager.getConnectionInfo().getIpAddress());
+//        //textView.setText("Your Device IP Address: " + ipAddress);
+//        Log.v(LOG_TAG, "Your Device IP Address: " + ipAddress);
+
     }
 
 

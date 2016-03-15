@@ -11,6 +11,7 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -24,11 +25,14 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //compile 'com.android.support:appcompat-v7:22.1.1'
     // Added for AdMob
+    compile 'com.google.android.gms:play-services-ads:8.4.0'
+    // Added for Google Cloud Messaging
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
     // Added for Java joke library
     compile project(':libjavajoke')
     // Added for Android display joke activity
     compile project(':libandroidjokedisplay')
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.google.android.gms:play-services:8.4.0'
+    //compile 'com.google.android.gms:play-services:8.4.0'
     compile project(path: ':jokebackend', configuration: 'android-endpoints')
 }

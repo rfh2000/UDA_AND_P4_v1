@@ -1,24 +1,23 @@
 package com.udacity.gradle.builditbigger;
 
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.text.format.Formatter;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends AppCompatActivity {
 
     InterstitialAd mInterstitialAd;
     Button mTellJokeButton;
-    private static final String LOG_TAG = "MainActivity: ";
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +25,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         mTellJokeButton = (Button) findViewById(R.id.button_tell_joke);
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        mProgressBar.setVisibility(View.GONE);
 
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); // This is just a test id
@@ -76,7 +77,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void launchAndroidLibraryActivity(){
-        new JokeEndpointsAsyncTask().execute(this);
+        new JokeEndpointsAsyncTask(mProgressBar).execute(this);
     }
 
     private void requestNewInterstitial() {
@@ -85,5 +86,6 @@ public class MainActivity extends ActionBarActivity {
                 .build();
         mInterstitialAd.loadAd(adRequest);
     }
+
 
 }

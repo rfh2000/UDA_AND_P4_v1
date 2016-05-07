@@ -51,4 +51,20 @@ dependencies {
 
     // AdMob only for free version
     freeCompile 'com.google.android.gms:play-services-ads:8.4.0'
+
+    //testCompile 'junit:junit:4.12'
 }
+
+task runAppEngine (dependsOn: ":jokebackend:appengineRun") << {
+    project(":jokebackend").afterEvaluate { jokebackend ->
+        jokebackend.extensions.appengine.daemon = true
+    }
+    project("app") { app ->
+        app.task("connectedAndroidTest") << {
+            println "Running tests"
+        }
+    }
+}
+runAppEngine.finalizedBy ":jokebackend:appengineStop"
+
+task printGreeting << {println "The test worked!"}

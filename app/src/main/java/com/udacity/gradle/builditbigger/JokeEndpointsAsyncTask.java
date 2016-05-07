@@ -25,6 +25,10 @@ class JokeEndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     private Context context;
     private WeakReference<ProgressBar> progressBarWeakReference;
 
+    public JokeEndpointsAsyncTask(){
+
+    }
+
     public JokeEndpointsAsyncTask(ProgressBar progressBar){
         this.progressBarWeakReference = new WeakReference<ProgressBar>(progressBar);
     }

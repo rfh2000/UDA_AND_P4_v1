@@ -40,4 +40,5 @@ appengine {
     getClientLibsOnBuild = true
     getDiscoveryDocsOnBuild = true
   }
+  httpPort = 8989
 }
